@@ -90,7 +90,7 @@ while Restartadventure.lower() == 'yes':
     #Final Decision
     print(f'\nAfter walking to town and finding the inn {CharacterName} Decides to talk to the innkeeper.')
     print(f'Innkeeper: \"Why what lovely {EyeColor} eyes you have! What can I get for you?')
-    Innsavepoint = input(f'\n Do you decide to stay at the inn and rest or leave and continue on your journey?\n(stay or leave?: ')
+    Innsavepoint = input(f'\n Do you decide to stay at the inn and rest or leave and continue on your journey?\n(stay or leave?): ')
     while Innsavepoint.lower() not in ['stay', 'leave']:
         Innsavepoint = input(f'Please choose stay or leave: ')
     if Innsavepoint == 'stay':
@@ -98,16 +98,15 @@ while Restartadventure.lower() == 'yes':
     else:
         print(f'\n{CharacterName} decided to continue on with the journey and brave the dangerous forest.')
 
-    #endings
-    if beginnerCave == 'yes' and Monsterfight == 'yes' and Innsavepoint == 'stay':
+    #endings - First ending is Secret Ending
+    if beginnerCave == 'yes' and Monsterfight == 'yes' and Innsavepoint == 'stay' and CharacterName.lower() == 'richter':
+        print(f'\n*****SECRET ENDING UNLOCKED*****')
+        print(f'Richter sits all alone at the tavern bar and mumbles: What a horrible night to have a curse.')
+    elif beginnerCave == 'yes' and Monsterfight == 'yes' and Innsavepoint == 'stay':
         print(f'\nAfter a long journey in a new world {CharacterName} has decided to stay in the safety of the inn.')
         print(f'After enjoying a hearty stew to feed their hunger {CharacterName} retires to their room.')
         print(f'{CharacterName} decided to review their new skill and plan how to utilize it.')
-        print(f'{CharacterName} awakes in the morning ready to start a new journey!')
-    #Bonus Secret Ending.
-    elif beginnerCave == 'yes' and Monsterfight == 'yes' and Innsavepoint == 'stay' and CharacterName.lower() == richter:
-        print(f'\n*****SECRET ENDING UNLOCKED*****')
-        print(f'Richter sits all alone at the tavern bar and mumbles: What a horrible night to have a curse.')
+        print(f'{CharacterName} awakes in the morning ready to start a new journey!')   
     elif beginnerCave == 'no' and Monsterfight == 'no' and Innsavepoint == 'leave':
         print(f'\nWeary from the travel and fight {CharacterName} decides to not stay at the inn.')
         print(f'Without even eating a meal to sate their hunger {CharacterName} Leaves in a hurry.')
